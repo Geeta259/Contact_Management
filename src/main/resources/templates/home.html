@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+<style>
+.content{
+	background-image: url('/images/banner.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+#active1 {
+	background-color: #FFC107;
+	color: white;
+}
+</style>
+
+</head>
+<body>
+	<section class="banner d-flex justify-content-center align-items-center">
+	<div class="content">
+		<div class="container-fluid p-0 m-0">
+			<div class="d-flex align-items-center justify-content-center"
+				style="height:80vh;">
+				<div class="row">
+					<div class="col-md-6" style="margin-left:20%;">
+						<div class="text-center text-white p-5"
+							style="background: rgb(224, 168, 0, 0.1); border-radius: 15px;">
+							<h1  style="font-size:34px;">
+								<strong> Smart Contact Manager</strong>
+							</h1>
+							<p style="text-align:left;font-size:16px;margin:10px;">A contact manager is a specialized software tool that simplifies the process of storing and accessing contact information. Its primary function revolves around managing names, addresses, and telephone numbers in a user-friendly manner. By focusing on the contacts themselves, these databases offer a holistic solution to effortlessly track and handle all communication interactions tied to each individual contact record.</p>
+							
+							
+							<p>&#169; Geeta</p>
+
+							<a href="/signup" class="btn btn-warning">Get Started</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</section>
+	
+</body>
+</html>
