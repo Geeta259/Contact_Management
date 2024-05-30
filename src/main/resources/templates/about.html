@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>About Page</title>
+
+<style>
+.banner{
+	width:100%;
+	height:93vh;
+	background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url("../images/banner.jpg");
+	background-size:cover;
+	color:white;
+}
+</style>
+</head>
+<body>
+	<section class="banner d-flex justify-content-center align-items-center">
+	<div>
+		
+		 <h1>About Smart Contact Manager</h1>
+    <p>Smart Contact Manager is a cutting-edge contact management application designed to help you organize and streamline your contacts effortlessly.</p>
+    <p>With Smart Contact Manager, you can:</p>
+    <ul>
+      <li>Store and manage all your contacts in one centralized location</li>
+      <li>Add, edit, and delete contacts with ease</li>
+      <li>Group contacts for better organization</li>
+      <li>Quickly search for specific contacts using powerful search capabilities</li>
+      <li>Access your contacts from any device, anytime, anywhere</li>
+    </ul>
+    <p>Our mission is to simplify contact management for individuals and businesses alike, making it easier for you to stay connected with the people who matter most.</p>
+    <p>Ready to get started? Sign up now and experience the convenience of Smart Contact Manager!</p>
+    <div class="text-center">
+    	<a href="/signup" class="btn btn-warning">Get Started</a>
+    </div>
+    
+		</div>
+	</section>
+	
+</body>
+</html>

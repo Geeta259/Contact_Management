@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dashboard Page</title>
+</head>
+<body>
+	<section>
+	   <div class="card mt-4 mr-3 ml-3">
+	      <div class="card-body">
+	      		<h1 class="text-center">Add Contact</h1>
+	      		
+	      		<div class="container-fluid mt-1">
+	      			<div class="row">
+	      					<div class="col-md-8 offset-md-1">
+	      							<form action="#"
+	      							 th:object="${contact}"
+	      							 enctype="multipart/form-data"
+	      							 method="post"
+	      							 th:action="@{/user/process-contact}"
+	      							 class="mt-2"
+	      							>
+	      							
+	      							<!-- first name -->
+	      							
+	      							
+	      							<div class="input-group flex-nowrap">
+									  <span class="input-group-text" id="addon-wrapping"><i class="fa fa-plus"></i></span>
+									<input required type="text" id="name" name="name" placeholder="Enter First Name here" class="form-control"/>
+	      							</div>
+	      							
+	      					
+	      							
+	      							<div class="input-group flex-nowrap mt-3">
+									  <span class="input-group-text" id="addon-wrapping"><i class="fas fa-user-alt"></i></span>
+										<input required type="text" id="secondName" name="secondName" placeholder="Enter Second Name here" class="form-control"/>
+	      							</div>
+									
+	      						<div class="input-group flex-nowrap mt-3">
+									  <span class="input-group-text" id="addon-wrapping"><i class="fa fa-phone"></i></span>
+									<input required  type="number" id="phone" name="phone" placeholder="Enter Phone No here" class="form-control"/>
+	      							</div>
+	      							
+	      							<div class="input-group flex-nowrap mt-3">
+									  <span class="input-group-text" id="addon-wrapping">@</span>
+									<input required type="email" id="email" name="email" placeholder="Enter Email here" class="form-control"/>
+	     						</div>
+	      							
+
+
+								<div class="input-group flex-nowrap mt-3">
+									  <span class="input-group-text" id="addon-wrapping"><i class="fa fa-briefcase"></i></span>
+								<input required type="text" id="work" name="work" placeholder="Enter Work here" class="form-control"/>
+	      						</div>
+	      							
+	      							
+	      								<!-- contact description -->
+	      							 <div class="form-group mt-3">
+	      							  <textarea name="description" id="mytextarea" cols="30" rows="10" class="form-control" placeholder="Enter contact description"></textarea>
+	      							 </div>
+	      							 
+	      							 <!-- contact image -->
+
+										<div class="input-group mb-3 mt-3">
+										  <input type="file" name="profileImage" class="form-control" id="inputGroupFile02">
+										  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+										</div>
+									
+									<div class="container text-center">
+									<button class="btn btn-outline-primary">Save Contact</button>
+									</div>
+
+	      								
+	      							</form>
+	      					</div>
+	      			</div>
+	      		
+	      		</div>
+	      </div>
+	   </div>
+	  
+	   <script>
+   	$(document).ready(()=> {
+   		$(".item").removeClass("active");
+   		$('#add-link').addClass("active");
+   	});
+   </script>
+   
+	</section>
+	
+	
+   
+</body>
+</html>

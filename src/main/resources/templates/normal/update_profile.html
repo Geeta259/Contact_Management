@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Profile</title>
+</head>
+<body>
+	<section>
+	      		<h1 class="text-center" style="font-size:30px;">Update Profile</h1>
+	      		
+	      		<div class="container-fluid mt-1">
+	      			<div class="row">
+	      					<div class="col-md-10 offset-md-1">
+						      							 
+					        <div class="card mt-2 mx-auto p-4 bg-light">
+					            <div class="card-body bg-light">
+					       
+					           	 <div class = "container">
+					           	 
+					                   <form action="#"
+	      							 th:object="${user}"
+	      							 enctype="multipart/form-data"
+	      							 method="post"
+	      							 th:action="@{/user/process-update-profile}"
+	      							 class="mt-2"
+	      							>
+					
+								<input type="hidden" name="id" th:value="${user.id}"/>
+						
+					            	 <div class="controls">
+					
+					                <div class="row mb-3">
+					                    <div class="col-md-12">
+					                        <div class="form-group">
+					                            <label for="username">Your Name</label>
+					                            <input id="username" type="text" name="name" class="form-control" required="required" th:value="${user.name}">
+					                            
+					                        </div>
+					                    </div>
+					                  
+					                </div>
+					                
+					              
+					                        
+					                <div class="row mb-3">
+					                    <div class="col-md-12">
+					                        <div class="form-group">
+					                           <label for="useremail">Your Email</label>
+					                            <input id="useremail" type="text" name="email" class="form-control" required="required" th:value="${user.email}">
+					                                
+					                            </div>
+					
+					                        </div>
+					                   </div> 
+					                        
+								
+					                 <div class="row mb-3">
+					                    <div class="col-md-12">
+					                        <div class="form-group">
+					                            <label for="about">Your About</label>
+					                            <textarea id="about" name="about" class="form-control" rows="4" required="required"  th:text="${user.about}"></textarea>
+					                                
+					                            </div>
+					
+					                        </div>
+					                   </div> 
+					                  
+					                <div class="row mb-3">
+					                    <div class="col-md-12">
+					                        <div class="form-group">
+					                         <label for="admin_image">Change Profile Image</label>
+					                            <input type="file" name="imageUrl" class="form-control" id="admin_image">
+										        
+					                            </div>
+					
+					                        </div>
+					                        
+					                     </div>
+					                     
+					                     <div class="row mb-3">
+					                     	  <div class="col-md-12">
+					                        
+					                        <input type="submit" style="width:100%;background: #c0392b !important;color: white !important;" class="btn btn-lg btn-block" value="Update Profile" >
+					                    
+					               			 </div>
+					                     </div>
+					                     
+					                     
+					                  </div>
+					        
+					         </form>
+					     		   </div>
+					            </div>
+							</div>
+       				 		</div>
+	      				</div>
+	      			</div>
+	      		
+	      		<script>
+   	$(document).ready(()=> {
+   		$(".item").removeClass("active");
+   		$('#profile').addClass("active");
+   	});
+   </script>
+   
+	      	
+	    
+	</section>
+	
+	
+   
+</body>
+</html>

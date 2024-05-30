@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign Up</title>
+</head>
+<body>
+	<section>
+	 <div class="container">
+	 	<div class="row">
+	 	  <div class="col-md-8 offset-md-2">
+	 	     <div class="my-card mt-2">
+	 	     	
+	 	     	<!-- alert message shown  here ... -->
+	 	     	<div th:if="${session.message}" class="alert" th:classappend="${session.message.type}" role="alert">
+				 <p class="text-center" th:text="${session.message.content}"></p>
+				 <th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block> 
+					</div>
+
+	 	        <div class="container text-center">
+	 	        <img  style="width:80px;" th:src="@{/images/register.png}" alt="registerimg"/>
+	 	     	
+	 	        </div>
+	 	     	<h1 class="text-center">Register Here !! </h1>
+	 	     
+	 	        <form novalidate action="" th:action="@{/do_register}" method="post" th:object="${user}">
+	 	      
+				  <div class="mb-2">
+				    <label for="name_field" class="form-label">Your Name</label>
+				    <input 
+				    type="text" 
+				    class="form-control"
+				    th:classappend="${#fields.hasErrors('name')? 'is-invalid':''}"
+				    id="name_field" 
+				    placeholder="Enter here"
+				    required
+				    name="name"
+				    th:value="${user.name}"
+				    >
+				    <div class="invalid-tooltip" th:each="e : ${#fields.errors('name')}" th:text="${e}">
+				     </div>
+				  </div>
+				  
+				  <div class="mb-2">
+				    <label for="email_field" class="form-label">Your Email</label>
+				    <input 
+				    type="email" 
+				    class="form-control" 
+				    id="email_field" 
+				    placeholder="Enter here"
+				    required
+				    name="email"
+				     th:value="${user.email}"
+				    >
+				  </div>
+				  
+				   <div class="mb-2">
+				    <label for="password_field" class="form-label">Your Password</label>
+				    <input 
+				    type="password" 
+				    class="form-control" 
+				    id="password_field" 
+				    placeholder="Enter here"
+				    required
+				    name="password"
+				    >
+				  </div>
+				  
+				  <div class="mb-2">
+				  	 <textarea name="about" th:value="${user.about}" placeholder="Enter something yourself" rows="6" class="form-control"></textarea>
+				  </div>
+				  
+				
+				  	 <div class="mb-3 form-check">
+				    <input
+				     type="checkbox" 
+				     name="agreement"
+				     class="form-check-input" 
+				     id="agreement">
+				    <label class="form-check-label" for="agreement">Accept terms and conditions</label>
+				 
+				  </div>
+				  
+				  <div class="container text-center">
+				  	 <button type="submit" class="btn bg-primary text-white">Submit</button>
+				  	<button type="reset" class="btn btn-warning">Reset</button>
+				  	
+				  </div>
+				  
+				 
+	 	        </form>
+	 	        
+	 	     </div>
+	 	    </div>
+	 	</div>
+	 </div>
+	</section>
+	
+ <!--   <div class="col-md-4 position-relative">
+    <label for="validationTooltip02" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  
+  -->
+ 
+  
+</body>
+</html>
